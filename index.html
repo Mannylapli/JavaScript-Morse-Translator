@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Morse Translator</h1>
+   
+ <section class="form-container">
+    <form action="" class="form">
+        <div class="language-selector-box">
+            <label for="lanquage-selector-box" class="languge-selector__label">Choose a translator:</label>
+            <select id="language-selector" class="language__select">
+                <option value="">--Please choose--</option>
+                <option value="English">English to Morse Code</option>
+                <option value="Morse code">Morse Code to English</option>
+            </select>
+        </div>
+    
+
+        <div class="word-input-box"> 
+            <label for="input" class="word-imput__label">Word to translate:</label>
+            <input type="text" id="input" class="word-input__input">
+            <input type="submit" class="word-input__submit button"
+        </div>
+
+    </form>
+
+
+    <div class="invalid-input-message">
+        <p class="p">Please provide a valid input.</p>
+      </div>
+  
+      <div class="output box">
+        <h2 class="output__heading">Translation:</h2>
+        <p class="output__p"></p>
+      </div>
+  
+      <div class="refresh-button">
+        <button class="refresh-button__button button">Translate another word</button>
+      </div>
+  </section> 
+</body>
+</html>
