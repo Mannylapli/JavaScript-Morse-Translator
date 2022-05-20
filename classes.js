@@ -1,4 +1,4 @@
-import { englishToMorseMap, moreseToEnglishMap } from "./maps";
+import { englishToMorseMap, moreseToEnglishMap } from "./maps.js";
 
 class Translator {
   constructor(map) {

@@ -16,3 +16,52 @@
 // between the two translators (Morse => English, English => Morse).
 // Remember to make a plan/pseudocode before diving right in.
 
+
+// import { EnglishToMorseCodeTranslator, MorseCodeToEnglishTranslator } from './classes.js';
+import { EnglishToMorseCodeTranslator, MorseCodeToEnglishTranslator } from "./classes.js";
+
+const inputBox = document.querySelector(".word-input__input");
+const invalidInputMessage = document.querySelector(".invalid-input-message");
+const languageSelector = document.querySelector(".language-selector__select");
+const outputBox = document.querySelector(".output__p");
+const resetButton = document.querySelector(".refresh-button__button");
+const submitButton = document.querySelector(".word-input__submit");
+
+let translator;
+
+// make the languge selection funcitonal by impldmenting the 2 maps within the languge options given (if statement)
+languageSelector.addEventListener("change", () => {
+    let languageSelection = languageSelector.value;
+    if (languageSelection = "Morse Code") {
+        translator = new MorseCodeToEnglishTranslator();
+    } else if (languageSelection === "English") {
+        translator = new EnglishToMorseCodeTranslator();
+    } invalidInputMessage.style.display = "none";
+    invalidInputMessage.innerHTML = `<p class="p">Please provide valid input.</p>`
+});
+
+// catch error
+submitButton.addEventListener("click", (event) => {
+    event.preventDefault
+   // preventDefault if invoked when the cancelable attribute value is true, 
+   //and while executing a listener for the event with passive set to false, 
+   //signals to the operation that caused event to be dispatched that it needs to be canceled.
+   let inputValue = inputBox.value;
+   try {
+       outputBox.innerHTML = translator.translate(inputValue);
+       invalidInputMessage.style.display = "none";
+   } catch (error) {
+       invalidInputMessage.innerHTML = e.message;
+       invalidInputMessage.style.display = "block";
+   }
+})
+
+// reset button (event listener and make the values empty)
+
+resetButton.addEventListener("click", () => {
+    document.querySelector(".form").reset();
+    translator = "";
+    outputBox.innerHTML = "";
+    invalidInputMessage.style.display = "none";
+})
+
